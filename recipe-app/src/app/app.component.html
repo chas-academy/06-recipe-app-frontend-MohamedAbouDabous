@@ -1,6 +1,13 @@
-<div>
+<div style="text-align:center">
+    <h1 [style.color]="fontColor">
+        {{ title }}
+    </h1>
+    <button (click)="getTheFreakingRecipes()">Search</button>
+
+    <input type="text" [(ngModel)]="title" (input)="title = $event.target.value" />
+
     <ul>
-        <li *ngFor="let i of recipes">{{i}}</li>
+        <li *ngFor="let recipe of recipes"> {{recipe.image}}</li>
     </ul>
 </div>
 
