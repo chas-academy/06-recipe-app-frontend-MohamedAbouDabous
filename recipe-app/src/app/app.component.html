@@ -2,13 +2,17 @@
     <h1 [style.color]="fontColor">
         {{ title }}
     </h1>
-    <button (click)="getTheFreakingRecipes()">Search</button>
+    <input type="text" #box />
+    <button (click)="getTheFreakingRecipes(box.value)" >Search</button>
 
-    <input type="text" [(ngModel)]="title" (input)="title = $event.target.value" />
-
+    
+    <div *ngFor="let recipe of recipes">
     <ul>
-        <li *ngFor="let recipe of recipes"> {{recipe.image}}</li>
+        <li>
+            <img src="{{ recipe.image }}">
+        </li>
     </ul>
+    </div>
 </div>
 
 <router-outlet></router-outlet>
