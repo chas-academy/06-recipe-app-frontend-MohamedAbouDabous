@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from './recipe.service'
-
+import { RecipeService } from '../recipe.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-recipe-list',
+  templateUrl: './recipe-list.component.html',
+  styleUrls: ['./recipe-list.component.scss']
 })
-export class AppComponent {
+export class RecipeListComponent implements OnInit {
+  
   title = 'Search for a recipe';
   fontColor = "grey";
   backgroundColor = "blue";
@@ -22,7 +22,10 @@ export class AppComponent {
     this.recipeService.getRecipes(searchTerm)
     .subscribe(data => {
       this.recipes = data.hits.map(e => e.recipe)
-      console.log(data)
     });
   }
+
+  ngOnInit() {
+  }
+
 }

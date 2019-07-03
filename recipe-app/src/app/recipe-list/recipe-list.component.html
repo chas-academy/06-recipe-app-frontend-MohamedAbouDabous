@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1 [style.color]="fontColor">
+      {{ title }}
+  </h1>
+  <input type="text" #box />
+  <button (click)="getTheFreakingRecipes(box.value)" >Search</button>
+
+  
+  <div *ngFor="let recipe of recipes">
+  <ul>
+      <li>
+          <img src="{{ recipe.image }}">
+      </li>
+  </ul>
+  </div>
+</div>
+
+

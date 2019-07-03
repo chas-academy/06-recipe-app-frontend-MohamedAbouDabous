@@ -6,10 +6,14 @@ import { RecipeService } from './recipe.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecipeDetailsComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [RecipeService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
