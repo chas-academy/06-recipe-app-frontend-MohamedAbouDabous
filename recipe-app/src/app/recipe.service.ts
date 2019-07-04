@@ -8,15 +8,21 @@ import { Observable } from 'rxjs';
 })
 export class RecipeService {
 
-  baseUrl = `https://api.edamam.com/`
-  apiId = `879e8817`;
+  Url = `https://api.edamam.com/`
   apiKey = `6d0d66100f4387b7b941759acf7c61fc`;
+  apiId = `879e8817`;
 
   constructor(private http: HttpClient) { }
 
 
- getRecipes(searchTerm: string) {
-   return this.http.get<any>(this.baseUrl + 'search?q=' + searchTerm + '&app_id=' + this.apiId + '&app_key=' + this.apiKey + '&from=0&to=30&health=alcohol-free&')
+ getAllRecipes(searchTerm: string) {
+   return this.http.get<any>(this.Url + 'search?q=' + searchTerm + '&app_id=' + this.apiId + '&app_key=' + this.apiKey + '&from=0&to=30&health=alcohol-free&')
  }
+
+ getOneRecipe(id): Observable<any> {
+
+  return this.http.get(this.Url + 'search?q=' + id + '&app_id=' + this.apiId + '&app_key=' + this.apiKey + '&from=0&to=1')
+}
+
 
 }

@@ -1,7 +1,7 @@
 <div style="text-align:center">
-  <h1 [style.color]="fontColor">
+  <h2 [style.color]="fontColor">
       {{ title }}
-  </h1>
+  </h2>
   <input type="text" #box />
   <button (click)="getTheFreakingRecipes(box.value)" >Search</button>
 
@@ -9,8 +9,11 @@
   <div *ngFor="let recipe of recipes">
   <ul>
       <li>
+          <a routerLink="detail/{{recipe.label}}" routerLinkActive="active">
           <img src="{{ recipe.image }}">
-      </li>
+          <h3>{{recipe.label}}</h3>
+        </a>
+        </li>
   </ul>
   </div>
 </div>

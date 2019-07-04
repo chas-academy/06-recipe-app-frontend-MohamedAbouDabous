@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeDetailsComponent implements OnInit {
 
-  constructor() { }
+  recipe
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private service: RecipeService,
+  ) { }
 
   ngOnInit() {
+    this.service.getOneRecipe(this.route.snapshot.params['id']).subscribe(data => {
+      this.recipe = data.hits.map(hit => hit.recipe)
+    });
+  }
+
+  backToMainPage() {
+    this.router.navigate(['']);
   }
 
 }

@@ -19,7 +19,7 @@ export class AppComponent {
 
 
   getTheFreakingRecipes = (searchTerm) => {
-    this.recipeService.getRecipes(searchTerm)
+    this.recipeService.getAllRecipes(searchTerm)
     .subscribe(data => {
       this.recipes = data.hits.map(e => e.recipe)
       console.log(data)

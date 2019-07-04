@@ -5,8 +5,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 
 const routes: Routes = [
 
-  { path: '', component: RecipeListComponent },
-  { path: 'recipedetails', component: RecipeDetailsComponent}
+  { path: 'detail/:id', component: RecipeDetailsComponent },
+  { path: '', component: RecipeListComponent }
 
 ];
 

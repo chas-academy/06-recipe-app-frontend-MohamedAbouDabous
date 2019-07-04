@@ -1,3 +1,15 @@
-<p>
-  recipe-details works!
-</p>
+<div class="centerDetailRecipes" >
+    <div  *ngIf="recipe">
+      <h1 >{{recipe[0].label}}</h1>
+      <img alt="Image of {{recipe[0].label}}" src="{{recipe[0].image}}">
+      <div >
+        <p>Ingredients:  {{recipe[0].ingredientLines}}</p>
+        <p>Health Labels: {{recipe[0].healthLabels}}</p>
+        <p>Total Calories: {{recipe[0].calories}}</p>
+  
+        <button  >Favorite This Recipe</button>
+        <button  (click)="backToMainPage()">Back To Main Page</button>
+      </div>
+    </div>
+  </div>
+
