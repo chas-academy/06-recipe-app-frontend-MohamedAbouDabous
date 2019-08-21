@@ -20,6 +20,7 @@ export class RecipeDetailsComponent implements OnInit {
   ngOnInit() {
     this.service.getOneRecipe(this.route.snapshot.params['id']).subscribe(data => {
       this.recipe = data.hits.map(hit => hit.recipe)
+      console.log(this.recipe)
     });
   }
 

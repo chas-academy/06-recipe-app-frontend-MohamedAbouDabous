@@ -1,0 +1,113 @@
+    
+.wrap {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    padding: 15px;
+  
+    .search {
+      display: flex;
+      width: 25%;
+      margin: auto;
+    }
+  
+    .meals {
+      display: flex;
+      justify-content: center;
+      margin: 30px;
+      width: 70%;
+      margin: auto;
+  
+      ul {
+        list-style: none;
+  
+        li {
+          text-align: start;
+        }
+  
+        .health {
+          padding-bottom: 10px;
+          text-decoration: underline;
+        }
+      }
+  
+      .healthlabels {
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #62a5a1;
+        margin: 5px;
+        cursor: pointer;
+      }
+  
+      label {
+        padding: 5px;
+      }
+    }
+  
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 85%;
+      margin: auto;
+    }
+  
+    .card {
+      background-color: #fff;
+      margin-top: 40px;
+      flex: 0 19%;
+      border-style: double;
+  
+      img {
+        width: 100%;
+        padding: 10px;
+      }
+  
+      .cardtitle {
+        color: #62a5a1;
+        padding-bottom: 15px;
+        padding: 2px 2px 10px 2px;
+        font-size: 1.7rem;
+        padding-top: 10px;
+      }
+  
+      a {
+        text-decoration: none;
+      }
+  
+      p {
+        font-size: 0.8rem;
+        color: #62a5a1;
+        padding-bottom: 10px;
+      }
+    }
+  
+    .form-control {
+      width: 200px;
+      height: 45px;
+      font-size: 1.8rem;
+      padding-left: 0.5rem;
+      border: 0.5px solid #62a5a1;
+      background-size: 0 100%;
+      margin: auto;
+    }
+  
+    .recipebtn {
+      padding: 10px 30px;
+      cursor: pointer;
+      border-radius: 1px;
+      background-color: #62a5a1;
+      font-size: 16px;
+      border: none;
+      color: #ffff;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+  
+    .recipebtn:hover {
+      background-color: #426e6b;
+    }
+  }

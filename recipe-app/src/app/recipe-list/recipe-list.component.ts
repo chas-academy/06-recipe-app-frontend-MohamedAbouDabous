@@ -8,20 +8,21 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit {
   
-  title = 'Search for a recipe';
-  fontColor = "grey";
-  backgroundColor = "blue";
-  recipes: string [];
+  searchTerm = this.searchInput;
+  healthLabel;
+  dietLabel;
+  recipes: any
 
   constructor (
     private recipeService: RecipeService
   ) {}
 
 
-  getTheFreakingRecipes = (searchTerm) => {
-    this.recipeService.getAllRecipes(searchTerm)
+  getTheFreakingRecipes = () => {
+    this.recipeService.getAllRecipes(this.searchTerm, this.healthLabel, this.dietLabel)
     .subscribe(data => {
       this.recipes = data.hits.map(e => e.recipe)
+      console.log(this.recipes)
     });
   }
 

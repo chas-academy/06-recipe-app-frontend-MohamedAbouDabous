@@ -1,21 +1,37 @@
-<div style="text-align:center">
-  <h2 [style.color]="fontColor">
-      {{ title }}
-  </h2>
-  <input type="text" #box />
-  <button (click)="getTheFreakingRecipes(box.value)" >Search</button>
+<div class="wrap">
+  <div class="search">
+    <input type="text" class="form-control" name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search for recipes"
+      autocomplete="off">
+    <button class="recipebtn" (click)="getTheFreakingRecipes()">Get Recipe's</button>
+  </div>
 
-  
-  <div *ngFor="let recipe of recipes">
-  <ul>
-      <li>
-          <a routerLink="detail/{{recipe.label}}" routerLinkActive="active">
-          <img src="{{ recipe.image }}">
-          <h3>{{recipe.label}}</h3>
-        </a>
-        </li>
-  </ul>
+  <div class="meals">
+    <ul>
+      <h4 class="health">Allergies:</h4>
+      <select class="healthlabels" [(ngModel)]="healthLabel">
+        <option value="alcohol-free">Alcohol-Free</option>
+        <option value="vegan">Vegan</option>
+        <option value="vegetarian">Vegetarian</option>
+      </select>
+    </ul>
+    <ul>
+      <h4 class="health">Diet:</h4>
+      <select class="healthlabels" [(ngModel)]="dietLabel">
+        <option value="balanced">Balanced</option>
+        <option value="high-fiber">High Fiber</option>
+        <option value="high-protein">High Protein</option>
+        <option value="low-sodium">Low Sodium</option>
+      </select>
+    </ul>
+  </div>
+
+  <div class="wrapper">
+    <div class="card" *ngFor="let recipe of recipes">
+      <a routerLink="detail/{{recipe.label}}" routerLinkActive="active">
+        <h3 class="cardtitle">{{recipe.label}}</h3>
+        <img src="{{recipe.image}}">
+      </a>
+    </div>
   </div>
 </div>
-
 
