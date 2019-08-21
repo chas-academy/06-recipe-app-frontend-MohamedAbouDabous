@@ -14,15 +14,12 @@ export class AppComponent {
   recipes: string [];
 
   constructor (
-    private recipeService: RecipeService
+    
   ) {}
 
 
-  getTheFreakingRecipes = (searchTerm) => {
-    this.recipeService.getAllRecipes(searchTerm)
-    .subscribe(data => {
-      this.recipes = data.hits.map(e => e.recipe)
-      console.log(data)
-    });
+  ngOnInit(){
+    
   }
+  
 }

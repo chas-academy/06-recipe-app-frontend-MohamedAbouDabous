@@ -11,6 +11,7 @@ export class RecipeService {
   Url = `https://api.edamam.com/`
   apiKey = `6d0d66100f4387b7b941759acf7c61fc`;
   apiId = `879e8817`;
+  healthLabel: string;
 
   constructor(private http: HttpClient) { }
 
