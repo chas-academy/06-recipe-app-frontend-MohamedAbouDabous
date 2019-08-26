@@ -20,14 +20,13 @@
         <option value="balanced">Balanced</option>
         <option value="high-fiber">High Fiber</option>
         <option value="high-protein">High Protein</option>
-        <option value="low-sodium">Low Sodium</option>
       </select>
     </ul>
   </div>
 
   <div class="wrapper">
     <div class="card" *ngFor="let recipe of recipes">
-      <a routerLink="detail/{{recipe.label}}" routerLinkActive="active">
+      <a routerLink="detail/{{recipe.label}}">
         <h3 class="cardtitle">{{recipe.label}}</h3>
         <img src="{{recipe.image}}">
       </a>

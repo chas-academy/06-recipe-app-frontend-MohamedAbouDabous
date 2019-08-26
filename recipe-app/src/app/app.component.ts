@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { RecipeService } from './recipe.service'
+import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+import { TokenService } from './token.service';
 
 
 @Component({
@@ -7,19 +9,27 @@ import { RecipeService } from './recipe.service'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'Search for a recipe';
-  fontColor = "grey";
-  backgroundColor = "blue";
-  recipes: string [];
+  title = 'Recipe App';
+  public loggedIn: boolean;
 
-  constructor (
-    
-  ) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private token: TokenService
+  ) { }
 
-
-  ngOnInit(){
-    
+  logout(event: MouseEvent) {
+    event.preventDefault();
+    this.token.remove();
+    this.auth.changeStatus(false);
+    this.router.navigateByUrl('/login');
   }
   
+  ngOnInit() {
+    this.auth.authStatus.subscribe(value => this.loggedIn = value);
+  }
+
+
 }

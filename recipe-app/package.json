@@ -26,7 +26,6 @@
     "@clr/icons": "^1.0.5",
     "@clr/ui": "^1.0.5",
     "@webcomponents/custom-elements": "^1.0.0"
-    
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.0",

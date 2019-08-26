@@ -16,6 +16,10 @@ export class RecipeDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private service: RecipeService,
   ) { }
+  
+  backToHomePage() {
+    this.router.navigate(['']);
+  }
 
   ngOnInit() {
     this.service.getOneRecipe(this.route.snapshot.params['id']).subscribe(data => {
@@ -24,8 +28,5 @@ export class RecipeDetailsComponent implements OnInit {
     });
   }
 
-  backToMainPage() {
-    this.router.navigate(['']);
-  }
 
 }
