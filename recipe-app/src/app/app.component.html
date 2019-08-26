@@ -1,9 +1,7 @@
+<!--The content below is only a placeholder and can be replaced.-->
 
-    <a class="menu" routerLink="">Home</a>
-    <a class="menu" routerLink="login">Login</a>
-    <a class="menu" routerLink="signup">Register</a>
-    
-    
-
+        <a class="menu" routerLink="profile" *ngIf=loggedIn>My Recipes</a>
+        <a class="menu" routerLink="login" *ngIf=!loggedIn>Login</a>
+        <a class="menu" href="" (click)="logout($event)" *ngIf=loggedIn>Logout</a>
 
 <router-outlet></router-outlet>

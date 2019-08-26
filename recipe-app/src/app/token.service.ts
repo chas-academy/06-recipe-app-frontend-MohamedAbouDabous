@@ -6,14 +6,23 @@ import { Injectable } from '@angular/core';
 export class TokenService {
 
   private iss = {
-    login: 'http://recipe.test/api/login',
-    signup: 'http://recipe.test/api/signup'
+    login: 'http://recipe.test/api',
+    signup: 'http://recipe.test/api'
   }
 
   constructor() { }
 
-  handle(token) {
+  handle(token, email) {
     this.set(token);
+    this.setEmail(email);
+  }
+
+  setEmail(email) {
+    localStorage.setItem('email', email);
+  }
+
+  getEmail() {
+    return localStorage.getItem('email');
   }
 
   set(token) {
@@ -25,12 +34,13 @@ export class TokenService {
   }
 
   remove() {
+    localStorage.removeItem('email');
     localStorage.removeItem('token');
   }
 
   isValid() {
     const token = this.get()
-    if (this.get()) {
+    if (token) {
       const payload = this.payload(token)
       if (payload) {
         return Object.values(this.iss).indexOf(payload.iss) > -1 ? true : false;

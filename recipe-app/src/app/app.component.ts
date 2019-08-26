@@ -11,7 +11,7 @@ import { TokenService } from './token.service';
 })
 
 export class AppComponent {
-  title = 'Recipe App';
+  
   public loggedIn: boolean;
 
   constructor(
@@ -22,8 +22,8 @@ export class AppComponent {
 
   logout(event: MouseEvent) {
     event.preventDefault();
-    this.token.remove();
     this.auth.changeStatus(false);
+    this.token.remove();
     this.router.navigateByUrl('/login');
   }
   

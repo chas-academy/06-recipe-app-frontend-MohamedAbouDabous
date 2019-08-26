@@ -1,3 +1,17 @@
-<p>
-  user works!
-</p>
+<h1 class="title">Saved Recipes</h1>
+<p>Here you can view and edit all your favorite recepies.</p>
+
+<div class="wrapper">
+  <div class="card" *ngFor="let recipe of collection">
+    <h3 class="cardtitle">{{recipe.label}}</h3>
+    <input [(ngModel)]="recipe.label" placeholder="name" />
+    <img src="{{recipe.image}}">
+    <p>Ingredients:</p>
+    <p><span>{{recipe.ingredientLines}}</span></p>
+    <p>Total Calories:</p>
+    <p><span>{{recipe.calories}}</span></p>
+    <p>Health Labels:</p>
+    <p><span>{{recipe.healthLabels}}</span></p>
+    <button href="#" (click)="editRecipe(recipe)" class="btn btn-success">Save Changes</button>
+    <button href="#" (click)="deleteRecipe(recipe.id)" class="btn btn-danger">Delete</button>
+  </div>

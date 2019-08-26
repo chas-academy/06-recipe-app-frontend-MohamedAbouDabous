@@ -26,26 +26,19 @@ export class SignupComponent implements OnInit {
     password: null,
   }
 
-  public error = [];
-
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.service.signup(this.form).subscribe(
-      data => this.handleResponse(data),
-      err => this.handleError(err)
-    )
-  }
-
+  
   handleResponse(data) {
-    this.token.handle(data.access_token);
+    this.token.handle(data.access_token, data.user.email);
     this.auth.changeStatus(true);
     this.router.navigateByUrl('/profile');
   }
-
-  handleError(error) {
-    this.error = error.error.errors;
+      onSubmit() {
+        this.service.signup(this.form).subscribe(
+      data => this.handleResponse(data)
+    )
   }
 
 }

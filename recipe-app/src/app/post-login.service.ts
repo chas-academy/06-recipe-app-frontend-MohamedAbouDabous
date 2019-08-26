@@ -9,11 +9,11 @@ import { TokenService } from './token.service';
 export class PostLoginService implements CanActivate {
 
   
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+    return this.token.loggedIn();
+  }
   constructor(
     private token: TokenService
     ) { }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-      return this.token.loggedIn();
-    }
 }

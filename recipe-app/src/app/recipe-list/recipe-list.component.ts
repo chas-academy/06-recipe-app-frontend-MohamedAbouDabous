@@ -8,7 +8,10 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit {
   
-  searchTerm
+  searchTerm;
+  search;
+  healthLabel = ''
+  dietLabel;
   recipes: any
 
   constructor (
@@ -19,7 +22,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   getTheFreakingRecipes = () => {
-    this.recipeService.getAllRecipes(this.searchTerm)
+    this.recipeService.getAllRecipes(this.searchTerm, this.healthLabel)
     .subscribe(data => {
       this.recipes = data.hits.map(e => e.recipe)
       console.log(this.recipes)

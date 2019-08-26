@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [PostLoginService] },
   { path: '', component: RecipeListComponent },
   { path: 'detail/:id', component: RecipeDetailsComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/detail/:id', component: RecipeDetailsComponent },
 ];
 
 // const routes: Routes = [

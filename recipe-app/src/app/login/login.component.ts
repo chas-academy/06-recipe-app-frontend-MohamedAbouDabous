@@ -27,19 +27,14 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.service.login(this.form).subscribe(
-      data => this.handleResponse(data),
-      err => this.handleError(err)
+      data => this.handleResponse(data)
     )
   }
 
   handleResponse(data) {
-    this.token.handle(data.access_token);
+    this.token.handle(data.access_token, data.user.email);
     this.auth.changeStatus(true);
     this.router.navigateByUrl('/profile');
-  }
-
-  handleError(error) {
-    this.error = error.error.error;
   }
 
   ngOnInit() {
