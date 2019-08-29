@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from '../token.service';
-// import { UserAndToken } from '../user-and-token';
+import { UserandtokenService } from './../userandtoken.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { UsersService } from '../users.service';
 
 
 
@@ -15,9 +13,8 @@ import { UsersService } from '../users.service';
 export class SignupComponent implements OnInit {
   
   constructor(
-    private service: UsersService,
-    // private token: UserAndToken,
-    private token: TokenService,
+    private service: UserandtokenService,
+    private token: UserandtokenService,
     private router: Router,
     private auth: AuthService,
   ) { }

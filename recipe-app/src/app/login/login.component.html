@@ -1,4 +1,4 @@
-<!-- <div class="mt-4 col-8">
+<div class="mt-4 col-8">
     <div>
       <div>
         <form #loginForm=ngForm (ngSubmit)="onSubmit()">
@@ -34,47 +34,3 @@
       </div>
     </div>
   </div>
-
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-<P></P>
-<div>Login Here</div>
-<P></P>
-      <form #loginForm=ngForm (ngSubmit)="onSubmit()">
-
-
-        <div >
-          <label for="inputEmail3">Email</label>
-          <div>
-            <input type="email" name="email" placeholder="Email" id="inputEmail3" [(ngModel)]="form.email"
-              required>
-          </div>
-        </div>
-
-        <div>
-          <label for="inputPassword3">Password</label>
-          <div>
-            <input type="password" name="password" placeholder="Password" id="inputPassword3"
-              [(ngModel)]="form.password" required>
-          </div>
-        </div>
-
-        <div>
-          <div>
-            <button type="submit" [disabled]="!loginForm.valid">Sign in</button>
-            <a routerLink="/register">Register</a>
-          </div>
-        </div>
-      </form>
-

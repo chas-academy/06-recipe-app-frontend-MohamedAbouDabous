@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service'
-import { TokenService } from '../token.service';
-// import { UserAndToken } from '../user-and-token';
+import { UserandtokenService } from './../userandtoken.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,10 +9,8 @@ import { TokenService } from '../token.service';
 export class ProfileComponent implements OnInit {
   
   constructor(
-    // private token: UserAndToken,
-    private service: UsersService,
-    private token: TokenService,
-    private userService: UsersService
+    private token: UserandtokenService,
+    private service: UserandtokenService,
   ) { }
 
   collection = [];
@@ -46,12 +42,6 @@ export class ProfileComponent implements OnInit {
         if (e.email == this.email) this.collection.push(e);
       });
       this.getRecipes();
-    })
-  }
-
-  editRecipe(data) {
-    let dbModel = this.constructModel(data)
-    this.userService.sendUpdatedRecipe(dbModel).subscribe(data => {
     })
   }
 

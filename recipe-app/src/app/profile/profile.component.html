@@ -1,4 +1,4 @@
-<h1> Your Favorite Recipes</h1>
+<h1 style="text-align:center"> Your Favorited Recipes</h1>
 
 <div class="row">
     <div class="col-md-4" *ngFor="let recipe of collection">
@@ -9,6 +9,6 @@
       <img src="{{recipe.image}}">
       <p>Ingredients:</p>
       <h6>{{recipe.ingredientLines}}</h6>
-      <button  (click)="deleteRecipe(recipe.id)" href="#" class="btn btn-danger">Delete</button>
+      <button (click)="deleteRecipe(recipe.id)" href="#" class="btn btn-danger">Delete</button>
     </div>
 </div>

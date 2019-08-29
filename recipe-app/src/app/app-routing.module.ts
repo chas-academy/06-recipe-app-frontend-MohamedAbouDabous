@@ -10,9 +10,9 @@ import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'recipes-list', pathMatch: 'full'},
-  { path: '', component: RecipeListComponent },
-  { path: 'detail/:id', component: RecipeDetailsComponent },
+  { path: '', redirectTo: 'recipes-list', pathMatch: 'full'},
+  { path: 'recipes-list', component: RecipeListComponent },
+  { path: 'recipes-list/detail/:id', component: RecipeDetailsComponent },
   { path: 'login', component: LoginComponent, canActivate: [PreLoginService] },
   { path: 'signup', component: SignupComponent, canActivate: [PreLoginService] },
   { path: 'profile', component: ProfileComponent },

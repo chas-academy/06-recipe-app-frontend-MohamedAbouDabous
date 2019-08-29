@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeService } from './recipe.service';
 
-
 import { AppComponent } from './app.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';

@@ -7,15 +7,12 @@
   </div>
 </form>
   <div class="meals">
-    <ul>
-      <h4 class="health">Allergies:</h4>
-      <select class="healthlabels" [(ngModel)]="healthLabel">
-        <option value="" default>Filter by</option>
-        <option value="alcohol-free">Alcohol-Free</option>
-        <option value="vegan">Vegan</option>
-        <option value="vegetarian">Vegetarian</option>
+      <select [(ngModel)]="healthLabel">
+        <option value="" default>Filter by...</option>
+        <option value="&health=vegetarian">Vegetarian</option>
+        <option value="&health=vegan">Vegan</option>
+        <option value="&health=alcohol-free">Alcohol-Free</option>
       </select>
-    </ul>
   </div>
 
   <div class="wrapper">
