@@ -10,11 +10,11 @@ import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, canActivate: [PreLoginService] },
-  { path: 'signup', component: SignupComponent, canActivate: [PreLoginService] },
-  { path: 'profile', component: ProfileComponent, canActivate: [PostLoginService] },
+  // { path: '', redirectTo: 'recipes-list', pathMatch: 'full'},
   { path: '', component: RecipeListComponent },
   { path: 'detail/:id', component: RecipeDetailsComponent },
+  { path: 'login', component: LoginComponent, canActivate: [PreLoginService] },
+  { path: 'signup', component: SignupComponent, canActivate: [PreLoginService] },
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/detail/:id', component: RecipeDetailsComponent },
 ];
@@ -24,8 +24,6 @@ const routes: Routes = [
 //   { path: 'detail/:id', component: RecipeDetailsComponent },
 //   { path: '', component: RecipeListComponent },
 //   { path: 'login', component: LoginComponent },
-//   { path: 'signup', component: SignupComponent, canActivate: [PreLoginService] },
-//   { path: 'profile', component: ProfileComponent, canActivate: [PostLoginService] }
 
 // ];
 

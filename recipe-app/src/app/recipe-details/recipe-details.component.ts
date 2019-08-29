@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RecipeService } from '../recipe.service';
 import { TokenService } from '../token.service';
+// import { UserAndToken } from '../user-and-token';
 import { UsersService } from '../users.service';
 
 
@@ -13,8 +14,9 @@ import { UsersService } from '../users.service';
 export class RecipeDetailsComponent implements OnInit {
   recipe: any
   clicked = false;
-
+  
   constructor(
+    // private token: UserAndToken,
     private router: Router,
     private route: ActivatedRoute,
     private service: RecipeService,
@@ -28,12 +30,12 @@ export class RecipeDetailsComponent implements OnInit {
     });
   }
 
-  goToRecipes() {
+  backToRecipes() {
     this.router.navigate(['']);
   }
 
   saveRecipe() {
-    console.log('sparad')
+    console.log('saved')
     this.clicked = false;
     let dbModel = this.constructModel(this.recipe[0])
     this.userService.sendRecipe(dbModel).subscribe(data => {

@@ -1,25 +1,19 @@
 <div class="wrap">
+  <form (ngSubmit)="getTheFreakingRecipes()">
   <div class="search">
-    <input type="text" class="form-control" name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search for recipes"
+    <input type="text" class="form-control" name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search here"
       autocomplete="off">
-    <button class="recipebtn" (click)="getTheFreakingRecipes()">Get Recipe's</button>
+    <button class="recipebtn" type="submit">Search</button>
   </div>
-
+</form>
   <div class="meals">
     <ul>
       <h4 class="health">Allergies:</h4>
       <select class="healthlabels" [(ngModel)]="healthLabel">
+        <option value="" default>Filter by</option>
         <option value="alcohol-free">Alcohol-Free</option>
         <option value="vegan">Vegan</option>
         <option value="vegetarian">Vegetarian</option>
-      </select>
-    </ul>
-    <ul>
-      <h4 class="health">Diet:</h4>
-      <select class="healthlabels" [(ngModel)]="dietLabel">
-        <option value="balanced">Balanced</option>
-        <option value="high-fiber">High Fiber</option>
-        <option value="high-protein">High Protein</option>
       </select>
     </ul>
   </div>

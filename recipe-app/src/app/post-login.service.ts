@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TokenService } from './token.service';
+// import { UserAndToken } from './user-and-token';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class PostLoginService implements CanActivate {
   }
   constructor(
     private token: TokenService
+    // private token: UserAndToken
     ) { }
 
 }

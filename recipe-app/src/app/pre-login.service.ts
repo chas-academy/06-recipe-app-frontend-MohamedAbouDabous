@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 import { TokenService } from './token.service';
+// import { UserAndToken } from './user-and-token';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class PreLoginService implements CanActivate {
   }
 
   constructor(
-    private token: TokenService
+    private token: TokenService,
+    // private token: UserAndToken
   ) { }
 }

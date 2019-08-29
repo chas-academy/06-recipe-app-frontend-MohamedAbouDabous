@@ -3,7 +3,6 @@ import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { TokenService } from './token.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,25 +10,25 @@ import { TokenService } from './token.service';
 })
 
 export class AppComponent {
-  
+
   public loggedIn: boolean;
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private router: Router,
     private token: TokenService
   ) { }
-
-  logout(event: MouseEvent) {
-    event.preventDefault();
-    this.auth.changeStatus(false);
-    this.token.remove();
-    this.router.navigateByUrl('/login');
-  }
   
   ngOnInit() {
     this.auth.authStatus.subscribe(value => this.loggedIn = value);
   }
-
+  logout(event: MouseEvent) {
+    event.preventDefault();
+    this.token.remove();
+    this.auth.changeStatus(false);
+    this.router.navigateByUrl('/login');
+  }
+  
+  
 
 }

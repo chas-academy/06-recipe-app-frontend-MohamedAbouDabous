@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service';
-import { TokenService } from '../token.service'
+import { UsersService } from '../users.service'
+import { TokenService } from '../token.service';
+// import { UserAndToken } from '../user-and-token';
 
 @Component({
   selector: 'app-profile',
@@ -8,8 +9,9 @@ import { TokenService } from '../token.service'
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+  
   constructor(
+    // private token: UserAndToken,
     private service: UsersService,
     private token: TokenService,
     private userService: UsersService
@@ -28,6 +30,7 @@ export class ProfileComponent implements OnInit {
     this.service.getSavedRecipes().subscribe(response => {
       response.data.forEach(e => {
         if (e.email == email) this.collection.push(e)
+        console.log(e);
       });
     });
   }

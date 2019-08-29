@@ -3,6 +3,7 @@ import { TokenService } from '../token.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { UsersService } from '../users.service';
+// import { UserAndToken } from '../user-and-token';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,9 @@ import { UsersService } from '../users.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  
   constructor(
+    // private token: UserAndToken,
     private service: UsersService,
     private token: TokenService,
     private router: Router,
@@ -23,7 +25,6 @@ export class LoginComponent implements OnInit {
     password: null
   }
 
-  public error = null;
 
   onSubmit() {
     this.service.login(this.form).subscribe(
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
   handleResponse(data) {
     this.token.handle(data.access_token, data.user.email);
     this.auth.changeStatus(true);
-    this.router.navigateByUrl('/profile');
+    this.router.navigateByUrl('');
   }
 
   ngOnInit() {

@@ -10,17 +10,15 @@ export class RecipeListComponent implements OnInit {
   
   searchTerm;
   search;
-  healthLabel = ''
-  dietLabel;
+  healthLabel = '';
   recipes: any
+  dietLabel;
 
   constructor (
     private recipeService: RecipeService
   ) {}
 
-  ngOnInit() {
-  }
-
+  
   getTheFreakingRecipes = () => {
     this.recipeService.getAllRecipes(this.searchTerm, this.healthLabel)
     .subscribe(data => {
@@ -28,6 +26,9 @@ export class RecipeListComponent implements OnInit {
       console.log(this.recipes)
     });
   }
-
+  
+  ngOnInit() {
+    this.getTheFreakingRecipes();
+  }
 
 }
