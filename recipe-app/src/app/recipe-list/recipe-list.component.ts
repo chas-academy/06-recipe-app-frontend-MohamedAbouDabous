@@ -20,7 +20,7 @@ export class RecipeListComponent implements OnInit {
   getTheFreakingRecipes = () => {
     this.recipeService.getAllRecipes(this.searchTerm, this.healthLabel)
     .subscribe(data => {
-      this.recipes = data.hits.map(hit => hit.recipe)
+      this.recipes = data.hits.map(e => e.recipe)
     });
   }
   

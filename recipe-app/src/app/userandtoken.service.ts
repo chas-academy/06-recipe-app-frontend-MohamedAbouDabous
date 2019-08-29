@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class UserandtokenService {
 
-  private loginSignup = {
+  private loginRegister = {
     login: 'http://recipe-app.test/api/login',
-    signup: 'http://recipe-app.test/api/signup'
+    register: 'http://recipe-app.test/api/register'
   }
 
   baseUrl = 'http://recipe-app.test/api'
@@ -22,8 +22,8 @@ export class UserandtokenService {
     return this.http.post(`${this.baseUrl}/login`, data)
   }
 
-  signup(data) {
-    return this.http.post(`${this.baseUrl}/signup`, data)
+  register(data) {
+    return this.http.post(`${this.baseUrl}/register`, data)
   }
 
   getSavedRecipes(): Observable<any> {
@@ -70,7 +70,7 @@ export class UserandtokenService {
     if (token) {
       const payload = this.payload(token)
       if (payload) {
-        return Object.values(this.loginSignup).indexOf(payload.loginSignup) > -1 ? true : false;
+        return Object.values(this.loginRegister).indexOf(payload.loginRegister) > -1 ? true : false;
       }
     }
 

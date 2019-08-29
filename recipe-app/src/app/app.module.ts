@@ -4,14 +4,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipeService } from './recipe.service';
 
 import { AppComponent } from './app.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SignupComponent } from './signup/signup.component';
+import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -21,7 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
     RecipeListComponent,
     LoginComponent,
     NavbarComponent,
-    SignupComponent,
+    RegisterComponent,
     ProfileComponent
   ],
   imports: [

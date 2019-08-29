@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RecipeService } from '../recipe.service';
-// import { TokenService } from '../token.service';
 import { UserandtokenService } from './../userandtoken.service';
-// import { UsersService } from '../users.service';
 
 
 @Component({
@@ -20,7 +18,6 @@ export class RecipeDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private service: RecipeService,
-    // private token: TokenService,
     private userService: UserandtokenService
   ) { }
 

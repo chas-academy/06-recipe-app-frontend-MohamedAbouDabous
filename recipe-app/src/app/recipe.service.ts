@@ -17,7 +17,7 @@ export class RecipeService {
 
  getAllRecipes(theEndResult, healthLabel): Observable<any> {
    return this.http.get<any>('https://api.edamam.com/search?q=' + theEndResult + '&app_id=' + this.apiId + '&app_key=' + this.apiKey + `&from=0&to=30${healthLabel}`)
- }
+  }
 
  getOneRecipe(id): Observable<any> {
 

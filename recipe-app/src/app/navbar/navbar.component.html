@@ -7,7 +7,7 @@
       <div class="navbar-nav ml-auto">
         <a class="nav-item nav-link active" routerLink="profile" *ngIf=loggedIn >My Recipes</a>
         <a class="nav-item nav-link" routerLink="login" *ngIf=!loggedIn>Login</a>
-        <a class="nav-item nav-link" routerLink="signup" *ngIf=!loggedIn>Register</a>
+        <a class="nav-item nav-link" routerLink="register" *ngIf=!loggedIn>Register</a>
         <a class="nav-item nav-link " href="" (click)="logout($event)" *ngIf=loggedIn>Logout</a>
       </div>
     </div>
